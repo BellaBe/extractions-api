@@ -15,7 +15,9 @@ export class ExtractionController extends Controller{
 
     async handleMatch (req, res, next) {
         try {
-            super.sendSuccess(res, "hello", "success")
+            console.log(req.body);
+            const result = this.ExtractionService.math(parsedData);
+            super.sendSuccess(res, result, "success")
         } catch (error) {
             console.log(error);
             super.sendError(res);

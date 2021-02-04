@@ -3,7 +3,7 @@ import Server from "./base/Server.js";
 import bodyParser from "body-parser";
 import cors from "cors";
 import helmet from "helmet"
-import { ExtractionController } from "./extraction/Extraction.js"
+import { ExtractionController } from "./controllers/ExtractionController.js"
 
 const app = express();
 const server = new Server(app, 3000);
@@ -19,7 +19,6 @@ const globalMiddleware = [
 ];
 
 Promise.resolve().then(() => {
-    console.log("am here")
     server.loadMiddleware(globalMiddleware);
     server.loadControllers(controllers);
     server.run();

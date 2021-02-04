@@ -2,27 +2,29 @@ export default class Server {
     app;
     port;
 
-    constructor(app, port){
+    constructor(app, port) {
         this.app = app;
         this.port = port;
     }
 
-    run(){
+    run() {
         return this.app.listen(this.port, () => {
-            console.log(`The server is running on port ${this.port}`);
+            console.log(`
+                -------------------------------------------------
+                Server started! Express: http://localhost:${this.port}
+                -------------------------------------------------
+                `);
         });
     }
 
-    loadMiddleware(middlewares){
-        console.log("am in mw")
+    loadMiddleware(middlewares) {
         middlewares.forEach(middleware => {
             this.app.use(middleware);
         });
     }
 
-    loadControllers(controllers){
+    loadControllers(controllers) {
         controllers.forEach(controller => {
-            console.log(controller.path)
             this.app.use(controller.path, controller.setRoutes())
         })
     }

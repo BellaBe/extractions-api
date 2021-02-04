@@ -1,1 +1,16 @@
 POST http://localhost:3000/extractions/match
+content-type: application/json
+
+{
+ "sentences":[
+ "Furthermore, please confirm your organisation's contact details
+according to the instructions set out in the sheet attached hereto.",
+ "This Confidentiality Agreement, including any non-contractual
+obligations arising out of or in connection with this Confidentiality
+Agreement, shall be governed by and construed in accordance with
+[PLACEHOLDER] law, and each party irrevocably submits to the exclusive
+jurisdiction of the [PLACEHOLDER] courts.",
+ "We acknowledge and agree to the matters set out in your
+Confidentiality Agreement dated PLACEHOLDER(of which this is a copy)."
+ ]
+}

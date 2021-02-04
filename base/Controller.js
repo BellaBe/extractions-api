@@ -5,9 +5,7 @@ export class Controller {
     routes;
 
     setRoutes(){
-        console.log("setr")
         for(const route of this.routes){
-            console.log(route)
             // for(const mw of route.localMiddleware){
             //     this.routes.use(route.path, mw);
             // }
